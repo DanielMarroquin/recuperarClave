@@ -1,0 +1,28 @@
+﻿@model RecoveryPass.Models.ViewModel.RecoveryPasswordViewModel
+@{
+    ViewBag.Title = "Recovery";
+}
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="form-style">
+            <form action="@Url.Content("~/Access/Recovery")" method="post">
+                @Html.HiddenFor(d => d.token)
+
+                <label>Escribe tu nueva contraseña</label>
+                @Html.PasswordFor(d => d.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Password, null, new { style = "color:red;" })
+
+                <label>vuelve a escribir contraseña</label>
+                @Html.PasswordFor(d => d.Password2, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Password2, null, new { style = "color:red;" })
+                <br />
+                <div class="text-right">
+                    <button class="btn btn-primary">Recuperar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

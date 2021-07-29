@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="color:green;">
+    @ViewBag.Message
+</div>
+<div style="color:red;">
+    @ViewBag.Error
+</div>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="form-style">
+            <form>
+                
+                    <label>Usuario</label>
+                    <input class="form-control" type="text" />
+                    <label>Contraseña</label>
+                    <input class="form-control" type="text" />
+
+           
+               <br />
+                <div class="text-right">
+                    <button class="btn btn-primary">Iniciar sesión</button>
+                </div>
+                <div>
+                    @Html.ActionLink("Olvidaste tu contraseña?","StartRecovery")
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
